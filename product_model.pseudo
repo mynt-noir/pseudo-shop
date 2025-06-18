@@ -14,3 +14,17 @@
 # Placeholder product list
 product_list = []
 
+# Adds a new product to the product_list
+function add_product(name, width, height, length, weight, color, brand)
+    product = {
+        name: name,
+        width: width,
+        height: height,
+        length: length,
+        weight: weight,
+        color: color,
+        brand: brand
+    }
+    product_list.append(product)
+end function
+
