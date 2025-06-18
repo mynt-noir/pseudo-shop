@@ -1,5 +1,46 @@
 # Displays product listings
 
-# Placeholder function:
-# function display_products()
+function display_products()
+end function
+
+
+# filter products (width, height, length, weight, color, brand)
+function filter_products(filters):
+	all_products = get_all_products()
+	filtered_products = []
+
+	for product in all_products:
+		match = True
+
+		if product.width is not null AND (product.width != filters.width):
+			match = False
+		end if
+
+		if product.height is not null AND (product.height != filters.height):
+			match = False
+		end if
+
+		if product.length is not null AND (product.length != filters.length):
+			match = False
+		end if
+
+		if product.weight is not null AND (product.weight != filters.weight):
+			match = False
+		end if
+
+		if product.color is not null AND (product.color != filters.color):
+			match = False
+		end if
+
+		if product.brand is not null AND (product.brand != filters.brand):
+			match = False
+		end if
+
+		if match == true:
+			filtered_products.append(product)
+		end if
+	end for
+
+	return filtered_products
+end function
 
