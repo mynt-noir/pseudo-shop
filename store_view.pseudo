@@ -1,5 +1,15 @@
-# Displays product listings
+# Handles the store view logic for displaying products based on filters
 
-# Placeholder function:
-# function display_products()
+# Sample return for product listings
+function filter_products(filters):
+    return filtered_products
+end function
 
+# Displays product listings based on filters
+function display_products(product_list):
+    for each product in product_list:
+        print(product.name)
+        print(product.price)
+        print(product.filters)
+    end for
+end function
