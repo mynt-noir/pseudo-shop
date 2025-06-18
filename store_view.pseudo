@@ -1,6 +1,6 @@
-# Displays product listings
-
-# Placeholder function:
+# Displays product listings based on filters
 function display_products():
     for each product in product_list:
         print(product.name)
+        print(product.price)
+        print(product.filters)
