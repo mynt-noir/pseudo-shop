@@ -3,33 +3,41 @@ function filter_products(filters):
 	all_products = get_all_products()
 	filtered_products = []
 
+	# check matching for each filter
 	for product in all_products:
 		match = True
 
+		# check width
 		if product.width is not null AND (product.width != filters.width):
 			match = False
 		end if
 
+		# check height
 		if product.height is not null AND (product.height != filters.height):
 			match = False
 		end if
 
+		# check length
 		if product.length is not null AND (product.length != filters.length):
 			match = False
 		end if
 
+		# check weight
 		if product.weight is not null AND (product.weight != filters.weight):
 			match = False
 		end if
 
+		# check color
 		if product.color is not null AND (product.color != filters.color):
 			match = False
 		end if
 
+		# check brand
 		if product.brand is not null AND (product.brand != filters.brand):
 			match = False
 		end if
 
+		# if product match
 		if match == true:
 			filtered_products.append(product)
 		end if
