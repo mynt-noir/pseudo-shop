@@ -1,6 +1,40 @@
 # Handles user signup and login
 
-# Placeholder function signatures:
-# function create_user(name, email, password)
-# function login_user(email, password)
+class User
+	string name
+	string email
+	string password
+end class
 
+#function for checking emails in database
+function in_registered_emails(email):
+	return in_email_db(email)
+end function
+
+#function for creating a user
+function create_user(name, email, password):
+	# check if email already registered
+	if in_registered_emails(email) == True:
+		print("Email is already. Please use a different email.")
+		return False
+	end if
+
+	# hash password
+	hashed_password = hash_password(password)
+
+	# update user class
+	user.name = name
+	user.email = email
+	user.password = hashed_password
+
+	# add user in database
+	add_user(user)
+
+	print("Registration Successful. You may now log in.")
+	return True
+end function
+
+#function for logging in a user
+function login_user(email, password):
+
+end function
