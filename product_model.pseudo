@@ -11,20 +11,24 @@
 #     brand: "Generic"
 # }
 
-# Placeholder product list
+# Product list to store all products
 product_list = []
+
+# Product class to represent a product
+class Product
+    function __init__(self, name, width, height, length, weight, color, brand)
+        self.name = name
+        self.width = width
+        self.height = height
+        self.length = length
+        self.weight = weight
+        self.color = color
+        self.brand = brand
+    end function
+end class
 
 # Adds a new product to the product_list
 function add_product(name, width, height, length, weight, color, brand)
-    product = {
-        name: name,
-        width: width,
-        height: height,
-        length: length,
-        weight: weight,
-        color: color,
-        brand: brand
-    }
+    product = Product(name, width, height, length, weight, color, brand)
     product_list.append(product)
 end function
-
