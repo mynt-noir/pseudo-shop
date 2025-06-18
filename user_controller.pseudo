@@ -6,12 +6,26 @@ class User
 	string password
 end class
 
-#function for checking emails in database
+# function for checking emails in database
 function in_registered_emails(email):
 	return in_email_db(email)
 end function
 
-#function for creating a user
+# function for password hashing
+function hash_password(password):
+	return hash_algorithm(password)
+end function
+
+# function for password checking
+function check_password(input_password, hashed_password):
+	hashed_input_password = hash_password(input_password)
+	if hashed_input_password == hashed_password:
+		return True
+	end if
+	return False
+end function
+
+# function for creating a user
 function create_user(name, email, password):
 	# check if email already registered
 	if in_registered_emails(email) == True:
@@ -34,7 +48,24 @@ function create_user(name, email, password):
 	return True
 end function
 
-#function for logging in a user
+# function for logging in a user
 function login_user(email, password):
+	# get user details by email input
+	user = get_user(email)
 
+	# check if user exists
+	if user == null:
+		print("No account found. Please check your email.")
+		return False
+	end if
+
+	# check password, if wrong
+	if check_password(password, user.password) == False:
+		print("Incorrect password. Try again.")
+		return False
+	end if
+
+	print("Login Successful.")
+	main(user)
+	return True
 end function
