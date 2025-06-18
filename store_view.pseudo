@@ -1,5 +1,9 @@
+# Sample return for product listings
+function filter_products(filters):
+    return filtered_products
+
 # Displays product listings based on filters
-function display_products():
+function display_products(product_list):
     for each product in product_list:
         print(product.name)
         print(product.price)
