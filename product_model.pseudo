@@ -32,3 +32,6 @@ function add_product(name, width, height, length, weight, color, brand)
     product = Product(name, width, height, length, weight, color, brand)
     product_list.append(product)
 end function
+
+# Sample usage of add_product
+# add_product("Sample Product", 10, 5, 20, 1.5, "red", "Generic")
